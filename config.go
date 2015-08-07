@@ -1,4 +1,4 @@
-package goConfig
+package goini
 
 import (
 	"bufio"
@@ -86,7 +86,7 @@ func getFilteredStr(sourceStr []byte) string {
 }
 
 func SetValue(section string, key string, value string) {
-	if section == nil {
+	if section == "" {
 		section = SectionDefault
 	}
 	if cfgs[section] == nil {
@@ -96,11 +96,11 @@ func SetValue(section string, key string, value string) {
 }
 
 func GetValue(section string, key string) string {
-	if section == nil {
+	if section == "" {
 		section = SectionDefault
 	}
 	if cfgs[section] != nil {
 		return cfgs[section][key]
 	}
-	return nil
+	return ""
 }

@@ -1,20 +1,19 @@
-package main
+package goini
 
 import (
-	"cfg"
 	"fmt"
 )
 
 func main() {
-	cfg.InitConfig("config.ini")
+	InitConfig("config.ini")
 
-	fmt.Println(cfg.GetValue(nil, "ip"))
+	fmt.Println(GetValue("", "ip"))
 	//same with
 	fmt.Println(GetValue("default", "ip"))
 
-	fmt.Println(cfg.GetValue("server", "ip"))
+	fmt.Println(GetValue("server", "ip"))
 	SetValue("server", "port", "9090")
-	fmt.Println(cfg.GetValue("server", "port"))
+	fmt.Println(GetValue("server", "port"))
 
-	fmt.Println(cfg.GetValue("invalid_section", "ip"))
+	fmt.Println(GetValue("invalid_section", "ip"))
 }
