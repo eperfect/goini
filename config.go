@@ -15,7 +15,7 @@ var (
 )
 
 const (
-	SectionDefault string = "defaut"
+	SectionDefault string = "default"
 	AscSpace       byte   = 32
 	AscTab         byte   = 9
 	AscEnter       byte   = 13
