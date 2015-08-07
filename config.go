@@ -59,6 +59,8 @@ func parseConfig(line []byte) {
 	if finalStr != "" {
 		if finalStr[0] == AscLeftBracket {
 			section = string(finalStr[1 : len(finalStr)-1])
+		} else if finalStr[0] == AscComment {
+			return
 		} else {
 			key, value := getKeyValue(finalStr)
 			SetValue(section, key, value)
@@ -74,7 +76,7 @@ func getKeyValue(kvStr string) (string, string) {
 func getFilteredStr(sourceStr []byte) string {
 	var tarBytes = make([]byte, 0, len(sourceStr))
 	for _, value := range sourceStr {
-		if value == AscTab || value == AscSpace || value == AscComment {
+		if value == AscTab || value == AscSpace {
 			continue
 		}
 		if value == AscEnter {
