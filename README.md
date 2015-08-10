@@ -6,7 +6,7 @@ A light weight library parsing config.ini file for Golang
 ##安装：
 
 ```
-go get github.com/eperfect/goini/
+go get github.com/eperfect/goini
 ```
 
 ###INI配置文件格式：
