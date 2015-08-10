@@ -1,5 +1,6 @@
 # go-config
 基于Golang的轻量级ini配置文件解析库。
+
 A light weight library parsing config.ini file for Golang
 
 ##安装：
@@ -24,8 +25,11 @@ port= 6379
 ```
 ###说明：
 1.＝配置属性
+
 2.[]配置分区
+
 3.#后为文件注释
+
 4.配置属性中忽略空格和Tab
 
 ###代码中使用：
